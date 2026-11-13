@@ -1,0 +1,14 @@
+{
+  "name": "eleivi-web-dev-2026-1",
+  "version": "1.0.0",
+  "description": "Лабораторные работы по курсу Веб-технологии - Елейви Мухаммад Иядович",
+  "scripts": {
+    "lint:html": "htmlhint \"**/*.html\"",
+    "lint:js": "eslint \"**/*.js\"",
+    "lint": "npm run lint:html && npm run lint:js"
+  },
+  "devDependencies": {
+    "eslint": "^10.0.0",
+    "htmlhint": "^1.9.0"
+  }
+}
