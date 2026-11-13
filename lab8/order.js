@@ -8,7 +8,7 @@ const selectedDishes = {
 
 const API_KEY_DEFAULT = "123e4567-e89b-12d3-a456-426655440000";
 const ORDERS_API_URL =
-    "https://edu.std-900.ist.mospolytech.ru/labs/api/orders";
+    "https://amd.dedyn.io:15243/labs/api/orders";
 
 function showNotification(message, isSuccess = false) {
     const existing = document.getElementById("order-notification-modal");
@@ -47,7 +47,8 @@ function showNotification(message, isSuccess = false) {
 function saveOrderToStorage() {
     const data = {};
     Object.keys(selectedDishes).forEach((cat) => {
-        data[cat] = selectedDishes[cat] ? selectedDishes[cat].keyword : null;
+        const dish = selectedDishes[cat];
+        data[cat] = dish ? (dish.id ?? dish.keyword) : null;
     });
     localStorage.setItem("lunch_order", JSON.stringify(data));
 }
@@ -60,8 +61,12 @@ function loadOrderFromStorage() {
         }
         const data = JSON.parse(raw);
         Object.keys(selectedDishes).forEach((cat) => {
-            if (data[cat]) {
-                const found = dishes.find((d) => d.keyword === data[cat]);
+            if (data[cat] !== null && data[cat] !== undefined) {
+                const found = dishes.find(
+                    (d) => d.id === data[cat] ||
+                           String(d.id) === String(data[cat]) ||
+                           d.keyword === data[cat]
+                );
                 if (found) {
                     selectedDishes[cat] = found;
                 }
@@ -276,26 +281,18 @@ async function handleOrderSubmit(e) {
         });
 
         if (!response.ok) {
-            throw new Error(`Ошибка сервера: ${response.status}`);
+            const errJson = await response.json().catch(() => null);
+            const msg = (errJson && errJson.error) ||
+                `Ошибка сервера: ${response.status}`;
+            throw new Error(msg);
         }
 
         localStorage.removeItem("lunch_order");
         showNotification("Заказ успешно оформлен!", true);
     } catch (err) {
-        console.warn("API order failed, saving locally:", err);
-        // Fallback for offline / 502 server error
-        const localOrders = JSON.parse(
-            localStorage.getItem("user_orders") || "[]"
-        );
-        payload.id = Date.now();
-        payload.created_at = new Date().toISOString();
-        localOrders.unshift(payload);
-        localStorage.setItem("user_orders", JSON.stringify(localOrders));
-
-        localStorage.removeItem("lunch_order");
         showNotification(
-            "Заказ успешно принят! (Сохранён локально)",
-            true
+            `Ошибка при оформлении заказа: ${err.message}`,
+            false
         );
     }
 }

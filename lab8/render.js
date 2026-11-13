@@ -17,7 +17,8 @@ const activeFilters = {
 function saveOrderToStorage() {
     const data = {};
     Object.keys(selectedDishes).forEach((cat) => {
-        data[cat] = selectedDishes[cat] ? selectedDishes[cat].keyword : null;
+        const dish = selectedDishes[cat];
+        data[cat] = dish ? (dish.id ?? dish.keyword) : null;
     });
     localStorage.setItem("lunch_order", JSON.stringify(data));
 }
@@ -30,8 +31,12 @@ function loadOrderFromStorage() {
         }
         const data = JSON.parse(raw);
         Object.keys(selectedDishes).forEach((cat) => {
-            if (data[cat]) {
-                const found = dishes.find((d) => d.keyword === data[cat]);
+            if (data[cat] !== null && data[cat] !== undefined) {
+                const found = dishes.find(
+                    (d) => d.id === data[cat] ||
+                           String(d.id) === String(data[cat]) ||
+                           d.keyword === data[cat]
+                );
                 if (found) {
                     selectedDishes[cat] = found;
                 }

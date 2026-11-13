@@ -18,10 +18,10 @@
 | **[lab4](./lab4/)** | Динамический рендеринг карточек блюд из JS, сортировка по алфавиту, выбор блюд | [`lunch.html`](./lab4/lunch.html) |
 | **[lab5](./lab5/)** | Расширение меню до 5 категорий (30 блюд) и фильтрация по видам (`data-kind`) | [`lunch.html`](./lab5/lunch.html) |
 | **[lab6](./lab6/)** | Варианты доступных комбо, CSS-трансформации и валидация заказа с модальным окном | [`lunch.html`](./lab6/lunch.html) |
-| **[lab7](./lab7/)** | Асинхронная загрузка блюд с REST API Политеха через `fetch()` с fallback-защитой | [`lunch.html`](./lab7/lunch.html) |
-| **[lab8](./lab8/)** | Сохранение выбора в `localStorage`, плавающая панель и страница «Оформить заказ» | [`lunch.html`](./lab8/lunch.html), [`order.html`](./lab8/order.html) |
+| **[lab7](./lab7/)** | Асинхронная загрузка блюд с REST API (`https://amd.dedyn.io:15243`) через `fetch()` | [`lunch.html`](./lab7/lunch.html) |
+| **[lab8](./lab8/)** | Сохранение выбора в `localStorage`, плавающая панель и оформление заказа (POST) | [`lunch.html`](./lab8/lunch.html), [`order.html`](./lab8/order.html) |
 | **[lab9](./lab9/)** | История заказов, просмотр деталей, модальное редактирование (PUT) и удаление (DELETE) | [`orders.html`](./lab9/orders.html), [`order.html`](./lab9/order.html) |
-| **[lab10](./lab10/)** | Адаптивный лендинг компании с Hero, сеткой Bootstrap 5 и формой обратной связи | [`index.html`](./lab10/index.html) |
+| **[lab10](./lab10/)** | Адаптивный лендинг компании с Hero, сеткой Bootstrap 5, заказом и формой связи | [`index.html`](./lab10/index.html), [`lunch.html`](./lab10/lunch.html) |
 
 ---
 

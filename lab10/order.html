@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформить заказ - Московский Ланч</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="lunch.css">
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-title">Московский Ланч</h1>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="lunch.html" class="nav-link">Собрать ланч</a>
+            <a href="order.html" class="nav-link active">Оформить заказ</a>
+            <a href="orders.html" class="nav-link">Заказы</a>
+            <a href="#contacts" class="nav-link">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="section composition-section">
+            <h2 class="section-title">Состав заказа</h2>
+            <div id="empty-composition-msg" class="empty-composition-msg hidden">
+                Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на страницу
+                <a href="lunch.html" class="inline-link">Собрать ланч</a>.
+            </div>
+            <div id="order-dishes-grid" class="dishes-grid"></div>
+        </section>
+
+        <section class="section checkout-section">
+            <h2 class="section-title">Оформление заказа</h2>
+            <form id="checkout-form" class="checkout-form">
+                <div class="form-columns">
+                    <div class="form-column">
+                        <h3 class="form-subtitle">Ваш заказ</h3>
+
+                        <div class="order-details">
+                            <div class="order-summary-item">
+                                <span class="order-item-title">Суп</span>
+                                <span id="summary-soup-val" class="order-item-value">Не выбран</span>
+                            </div>
+
+                            <div class="order-summary-item">
+                                <span class="order-item-title">Главное блюдо</span>
+                                <span id="summary-main-val" class="order-item-value">Не выбрано</span>
+                            </div>
+
+                            <div class="order-summary-item">
+                                <span class="order-item-title">Салат или стартер</span>
+                                <span id="summary-salad-val" class="order-item-value">Не выбран</span>
+                            </div>
+
+                            <div class="order-summary-item">
+                                <span class="order-item-title">Напиток</span>
+                                <span id="summary-drink-val" class="order-item-value">Не выбран</span>
+                            </div>
+
+                            <div class="order-summary-item">
+                                <span class="order-item-title">Десерт</span>
+                                <span id="summary-dessert-val" class="order-item-value">Не выбран</span>
+                            </div>
+                        </div>
+
+                        <div class="total-price-block">
+                            <span class="total-label">Итоговая стоимость:</span>
+                            <span id="summary-total-val" class="total-value">0 ₽</span>
+                        </div>
+
+                        <div class="form-group comment-group">
+                            <label for="order-comment" class="form-label">Комментарий к заказу</label>
+                            <textarea id="order-comment" name="comment" class="form-control form-textarea" rows="4" placeholder="Пожелания по приготовлению или доставке"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-column">
+                        <h3 class="form-subtitle">Данные клиента</h3>
+
+                        <div class="form-group">
+                            <label for="client-name" class="form-label">Имя</label>
+                            <input type="text" id="client-name" name="full_name" class="form-control" placeholder="Иван Иванов" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-email" class="form-label">Email</label>
+                            <input type="email" id="client-email" name="email" class="form-control" placeholder="example@mail.ru" required>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="client-subscribe" name="subscribe" value="1" checked>
+                                Согласен получать информацию о скидках и акциях
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-phone" class="form-label">Телефон</label>
+                            <input type="tel" id="client-phone" name="phone" class="form-control" placeholder="+7 (999) 000-00-00" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-address" class="form-label">Адрес доставки</label>
+                            <input type="text" id="client-address" name="delivery_address" class="form-control" placeholder="г. Москва, ул. Большая Семёновская, д. 38" required>
+                        </div>
+
+                        <fieldset class="form-fieldset">
+                            <legend class="form-legend">Время доставки</legend>
+                            <div class="radio-option">
+                                <label class="radio-label">
+                                    <input type="radio" name="delivery_type" value="now" required checked>
+                                    Как можно скорее
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <label class="radio-label">
+                                    <input type="radio" name="delivery_type" value="by_time" required>
+                                    К указанному времени
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                            <label for="delivery-time" class="form-label">Укажите время доставки</label>
+                            <input type="time" id="delivery-time" name="delivery_time" class="form-control" min="07:00" max="23:00" step="300">
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="reset" class="form-btn btn-reset">Сбросить</button>
+                            <button type="submit" class="form-btn btn-submit">Отправить заказ</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contacts" class="footer">
+        <p class="footer-text">
+            Служба доставки бизнес-ланчей «Московский Ланч».
+            г. Москва, ул. Большая Семёновская, д. 38.
+        </p>
+        <p class="footer-contacts">
+            Телефон:
+            <a href="tel:+74951234567" class="footer-link">+7 (495) 123-45-67</a>
+            | Email:
+            <a href="mailto:order@lunch-moscow.ru" class="footer-link">order@lunch-moscow.ru</a>
+        </p>
+    </footer>
+
+    <script src="dishes.js"></script>
+    <script src="order.js"></script>
+</body>
+</html>

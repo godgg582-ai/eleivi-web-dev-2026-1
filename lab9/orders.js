@@ -3,7 +3,7 @@ let activeModal = null;
 
 const API_KEY_DEFAULT = "123e4567-e89b-12d3-a456-426655440000";
 const ORDERS_API_BASE =
-    "https://edu.std-900.ist.mospolytech.ru/labs/api/orders";
+    "https://amd.dedyn.io:15243/labs/api/orders";
 
 function showNotification(message) {
     const existing = document.getElementById("action-notification-modal");
@@ -110,24 +110,21 @@ async function handleDeleteOrder(order) {
     const apiKey = getApiKey();
     const url = `${ORDERS_API_BASE}/${order.id}?api_key=${apiKey}`;
 
-    let remoteOk = false;
     try {
         const res = await fetch(url, { method: "DELETE" });
-        if (res.ok) {
-            remoteOk = true;
+        if (!res.ok) {
+            const errJson = await res.json().catch(() => null);
+            const msg = (errJson && errJson.error) ||
+                `Ошибка сервера: ${res.status}`;
+            throw new Error(msg);
         }
-    } catch (e) {
-        console.warn("Delete request failed on API:", e);
-    }
 
-    userOrders = userOrders.filter((o) => o.id !== order.id);
-    saveLocalOrders(userOrders);
-    triggerTableRefresh();
-
-    if (remoteOk) {
+        userOrders = userOrders.filter((o) => o.id !== order.id);
+        saveLocalOrders(userOrders);
+        triggerTableRefresh();
         showNotification("Заказ успешно удалён!");
-    } else {
-        showNotification("Заказ успешно удалён из списка!");
+    } catch (e) {
+        showNotification(`Ошибка при удалении заказа: ${e.message}`);
     }
 }
 
@@ -135,7 +132,6 @@ async function handleSaveOrder(updatedOrder) {
     const apiKey = getApiKey();
     const url = `${ORDERS_API_BASE}/${updatedOrder.id}?api_key=${apiKey}`;
 
-    let remoteOk = false;
     try {
         const res = await fetch(url, {
             method: "PUT",
@@ -144,23 +140,22 @@ async function handleSaveOrder(updatedOrder) {
             },
             body: JSON.stringify(updatedOrder)
         });
-        if (res.ok) {
-            remoteOk = true;
+        if (!res.ok) {
+            const errJson = await res.json().catch(() => null);
+            const msg = (errJson && errJson.error) ||
+                `Ошибка сервера: ${res.status}`;
+            throw new Error(msg);
         }
+
+        const saved = await res.json().catch(() => updatedOrder);
+        userOrders = userOrders.map((o) => {
+            return o.id === updatedOrder.id ? saved : o;
+        });
+        saveLocalOrders(userOrders);
+        triggerTableRefresh();
+        showNotification("Заказ успешно изменён!");
     } catch (e) {
-        console.warn("Update request failed on API:", e);
-    }
-
-    userOrders = userOrders.map((o) => {
-        return o.id === updatedOrder.id ? updatedOrder : o;
-    });
-    saveLocalOrders(userOrders);
-    triggerTableRefresh();
-
-    if (remoteOk) {
-        showNotification("Заказ успешно изменён!");
-    } else {
-        showNotification("Заказ успешно изменён!");
+        showNotification(`Ошибка при изменении заказа: ${e.message}`);
     }
 }
 
@@ -462,43 +457,6 @@ function renderOrdersTable() {
     });
 }
 
-function seedSampleOrders() {
-    return [
-        {
-            id: 101,
-            created_at: new Date(Date.now() - 3600000 * 2).toISOString(),
-            full_name: "Иван Иванов",
-            email: "ivan@example.com",
-            phone: "+7 (999) 111-22-33",
-            delivery_address: "г. Москва, ул. Большая Семёновская, д. 38",
-            delivery_type: "by_time",
-            delivery_time: "13:30",
-            comment: "Позвонить перед доставкой",
-            soup_id: 1,
-            main_course_id: 7,
-            salad_id: 13,
-            drink_id: 19,
-            dessert_id: 25
-        },
-        {
-            id: 102,
-            created_at: new Date(Date.now() - 3600000 * 26).toISOString(),
-            full_name: "Иван Иванов",
-            email: "ivan@example.com",
-            phone: "+7 (999) 111-22-33",
-            delivery_address: "г. Москва, ул. Малая Семёновская, д. 12",
-            delivery_type: "now",
-            delivery_time: null,
-            comment: "Оставить у двери",
-            soup_id: 3,
-            main_course_id: 8,
-            salad_id: null,
-            drink_id: 20,
-            dessert_id: null
-        }
-    ];
-}
-
 async function fetchOrders() {
     const apiKey = getApiKey();
     const url = `${ORDERS_API_BASE}?api_key=${encodeURIComponent(apiKey)}`;
@@ -512,13 +470,10 @@ async function fetchOrders() {
         userOrders = Array.isArray(data) ? data : [];
     } catch (err) {
         console.warn("Failed to fetch orders from API, checking local:", err);
-        const local = JSON.parse(localStorage.getItem("user_orders") || "[]");
-        if (local.length > 0) {
-            userOrders = local;
-        } else {
-            userOrders = seedSampleOrders();
-            saveLocalOrders(userOrders);
-        }
+        const local = JSON.parse(
+            localStorage.getItem("user_orders") || "[]"
+        );
+        userOrders = Array.isArray(local) ? local : [];
     }
 
     userOrders.sort((a, b) => {

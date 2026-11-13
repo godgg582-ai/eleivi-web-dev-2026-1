@@ -308,7 +308,7 @@ const defaultDishes = [
 let dishes = [];
 
 const DISHES_API_URL =
-    "https://edu.std-900.ist.mospolytech.ru/labs/api/dishes";
+    "https://amd.dedyn.io:15243/labs/api/dishes";
 
 async function loadDishes() {
     try {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказы - Московский Ланч</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="orders.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-title">Московский Ланч</h1>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="lunch.html" class="nav-link">Собрать ланч</a>
+            <a href="order.html" class="nav-link">Оформить заказ</a>
+            <a href="orders.html" class="nav-link active">Заказы</a>
+            <a href="#contacts" class="nav-link">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="section orders-section">
+            <h2 class="section-title">История заказов</h2>
+
+            <div id="empty-orders-msg" class="empty-orders-msg hidden">
+                У вас пока нет оформленных заказов. Чтобы сделать заказ, перейдите на страницу
+                <a href="lunch.html" class="inline-link">Собрать ланч</a>.
+            </div>
+
+            <div id="orders-table-container" class="orders-table-container">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th class="table-header">№</th>
+                            <th class="table-header">Дата оформления</th>
+                            <th class="table-header">Состав заказа</th>
+                            <th class="table-header">Стоимость</th>
+                            <th class="table-header">Время доставки</th>
+                            <th class="table-header">Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-table-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts" class="footer">
+        <p class="footer-text">
+            Служба доставки бизнес-ланчей «Московский Ланч».
+            г. Москва, ул. Большая Семёновская, д. 38.
+        </p>
+        <p class="footer-contacts">
+            Телефон:
+            <a href="tel:+74951234567" class="footer-link">+7 (495) 123-45-67</a>
+            | Email:
+            <a href="mailto:order@lunch-moscow.ru" class="footer-link">order@lunch-moscow.ru</a>
+        </p>
+    </footer>
+
+    <script src="dishes.js"></script>
+    <script src="orders.js"></script>
+</body>
+</html>
