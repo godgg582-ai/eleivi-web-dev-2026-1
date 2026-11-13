@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Московский Ланч</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lunch.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-title">Московский Ланч</h1>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="lunch.html" class="nav-link active">Собрать ланч</a>
+            <a href="#soups" class="nav-link">Супы</a>
+            <a href="#main-dishes" class="nav-link">Главные блюда</a>
+            <a href="#drinks" class="nav-link">Напитки</a>
+            <a href="#contacts" class="nav-link">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="soups" class="section">
+            <h2 class="section-title">Выберите суп</h2>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <img src="images/soups/gazpacho.jpg" alt="Гаспачо" class="dish-img">
+                    <p class="dish-price">195 ₽</p>
+                    <p class="dish-name">Гаспачо томатный</p>
+                    <p class="dish-count">350 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/soups/mushroom_soup.jpg" alt="Грибной суп-пюре" class="dish-img">
+                    <p class="dish-price">185 ₽</p>
+                    <p class="dish-name">Грибной суп-пюре с сухариками</p>
+                    <p class="dish-count">330 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/soups/norwegian_soup.jpg" alt="Норвежский суп" class="dish-img">
+                    <p class="dish-price">270 ₽</p>
+                    <p class="dish-name">Норвежский суп с лососем</p>
+                    <p class="dish-count">330 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="main-dishes" class="section">
+            <h2 class="section-title">Выберите главное блюдо</h2>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <img src="images/main_course/chickencutletsandmashedpotatoes.jpg" alt="Котлеты из курицы с картофельным пюре" class="dish-img">
+                    <p class="dish-price">225 ₽</p>
+                    <p class="dish-name">Котлеты из курицы с нежным картофельным пюре</p>
+                    <p class="dish-count">280 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/main_course/friedpotatoeswithmushrooms1.jpg" alt="Жареная картошка с грибами" class="dish-img">
+                    <p class="dish-price">150 ₽</p>
+                    <p class="dish-name">Жареная картошка с лесными грибами</p>
+                    <p class="dish-count">250 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/main_course/lasagna.jpg" alt="Лазанья" class="dish-img">
+                    <p class="dish-price">385 ₽</p>
+                    <p class="dish-name">Итальянская лазанья болоньезе</p>
+                    <p class="dish-count">310 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="drinks" class="section">
+            <h2 class="section-title">Выберите напиток</h2>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <img src="images/beverages/applejuice.jpg" alt="Яблочный сок" class="dish-img">
+                    <p class="dish-price">100 ₽</p>
+                    <p class="dish-name">Яблочный сок осветленный</p>
+                    <p class="dish-count">300 мл</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/beverages/carrotjuice.jpg" alt="Морковный сок" class="dish-img">
+                    <p class="dish-price">110 ₽</p>
+                    <p class="dish-name">Морковный сок со сливками</p>
+                    <p class="dish-count">300 мл</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/beverages/orangejuice.jpg" alt="Апельсиновый сок" class="dish-img">
+                    <p class="dish-price">120 ₽</p>
+                    <p class="dish-name">Апельсиновый свежевыжатый сок</p>
+                    <p class="dish-count">300 мл</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacts" class="footer">
+        <p class="footer-text">
+            Служба доставки бизнес-ланчей «Московский Ланч».
+            г. Москва, ул. Большая Семёновская, д. 38.
+        </p>
+        <p class="footer-contacts">
+            Телефон:
+            <a href="tel:+74951234567" class="footer-link">+7 (495) 123-45-67</a>
+            | Email:
+            <a href="mailto:order@lunch-moscow.ru" class="footer-link">order@lunch-moscow.ru</a>
+        </p>
+    </footer>
+</body>
+</html>
