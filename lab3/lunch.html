@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Московский Ланч</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lunch.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-title">Московский Ланч</h1>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="lunch.html" class="nav-link active">Собрать ланч</a>
+            <a href="#soups" class="nav-link">Супы</a>
+            <a href="#main-dishes" class="nav-link">Главные блюда</a>
+            <a href="#drinks" class="nav-link">Напитки</a>
+            <a href="#order" class="nav-link">Заказ</a>
+            <a href="#contacts" class="nav-link">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="soups" class="section">
+            <h2 class="section-title">Выберите суп</h2>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <img src="images/soups/gazpacho.jpg" alt="Гаспачо" class="dish-img">
+                    <p class="dish-price">195 ₽</p>
+                    <p class="dish-name">Гаспачо томатный</p>
+                    <p class="dish-count">350 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/soups/mushroom_soup.jpg" alt="Грибной суп-пюре" class="dish-img">
+                    <p class="dish-price">185 ₽</p>
+                    <p class="dish-name">Грибной суп-пюре с сухариками</p>
+                    <p class="dish-count">330 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/soups/norwegian_soup.jpg" alt="Норвежский суп" class="dish-img">
+                    <p class="dish-price">270 ₽</p>
+                    <p class="dish-name">Норвежский суп с лососем</p>
+                    <p class="dish-count">330 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="main-dishes" class="section">
+            <h2 class="section-title">Выберите главное блюдо</h2>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <img src="images/main_course/chickencutletsandmashedpotatoes.jpg" alt="Котлеты из курицы с картофельным пюре" class="dish-img">
+                    <p class="dish-price">225 ₽</p>
+                    <p class="dish-name">Котлеты из курицы с нежным картофельным пюре</p>
+                    <p class="dish-count">280 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/main_course/friedpotatoeswithmushrooms1.jpg" alt="Жареная картошка с грибами" class="dish-img">
+                    <p class="dish-price">150 ₽</p>
+                    <p class="dish-name">Жареная картошка с лесными грибами</p>
+                    <p class="dish-count">250 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/main_course/lasagna.jpg" alt="Лазанья" class="dish-img">
+                    <p class="dish-price">385 ₽</p>
+                    <p class="dish-name">Итальянская лазанья болоньезе</p>
+                    <p class="dish-count">310 г</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="drinks" class="section">
+            <h2 class="section-title">Выберите напиток</h2>
+            <div class="dishes-grid">
+                <div class="dish-card">
+                    <img src="images/beverages/applejuice.jpg" alt="Яблочный сок" class="dish-img">
+                    <p class="dish-price">100 ₽</p>
+                    <p class="dish-name">Яблочный сок осветленный</p>
+                    <p class="dish-count">300 мл</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/beverages/carrotjuice.jpg" alt="Морковный сок" class="dish-img">
+                    <p class="dish-price">110 ₽</p>
+                    <p class="dish-name">Морковный сок со сливками</p>
+                    <p class="dish-count">300 мл</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+                <div class="dish-card">
+                    <img src="images/beverages/orangejuice.jpg" alt="Апельсиновый сок" class="dish-img">
+                    <p class="dish-price">120 ₽</p>
+                    <p class="dish-name">Апельсиновый свежевыжатый сок</p>
+                    <p class="dish-count">300 мл</p>
+                    <button type="button" class="dish-btn">Добавить</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="section order-section">
+            <h2 class="section-title">Сделать заказ</h2>
+            <form action="https://httpbin.org/post" method="POST" class="order-form">
+                <div class="form-columns">
+                    <div class="form-column">
+                        <h3 class="form-subtitle">Ваш заказ</h3>
+
+                        <div class="form-group">
+                            <label for="soup-select" class="form-label">Выберите суп</label>
+                            <select id="soup-select" name="soup" class="form-control" required>
+                                <option value="">-- Выберите суп --</option>
+                                <option value="gazpacho">Гаспачо (195 ₽)</option>
+                                <option value="mushroom_soup">Грибной суп-пюре (185 ₽)</option>
+                                <option value="norwegian_soup">Норвежский суп (270 ₽)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="main-dish-select" class="form-label">Выберите главное блюдо</label>
+                            <select id="main-dish-select" name="main_dish" class="form-control" required>
+                                <option value="">-- Выберите главное блюдо --</option>
+                                <option value="chicken_cutlets">Котлеты из курицы с пюре (225 ₽)</option>
+                                <option value="potatoes_mushrooms">Жареная картошка с грибами (150 ₽)</option>
+                                <option value="lasagna">Лазанья болоньезе (385 ₽)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="drink-select" class="form-label">Выберите напиток</label>
+                            <select id="drink-select" name="drink" class="form-control" required>
+                                <option value="">-- Выберите напиток --</option>
+                                <option value="applejuice">Яблочный сок (100 ₽)</option>
+                                <option value="carrotjuice">Морковный сок (110 ₽)</option>
+                                <option value="orangejuice">Апельсиновый сок (120 ₽)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="order-comment" class="form-label">Комментарий к заказу</label>
+                            <textarea id="order-comment" name="comment" class="form-control form-textarea" rows="4" placeholder="Пожелания по приготовлению или доставке"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-column">
+                        <h3 class="form-subtitle">Данные клиента</h3>
+
+                        <div class="form-group">
+                            <label for="client-name" class="form-label">Имя</label>
+                            <input type="text" id="client-name" name="full_name" class="form-control" placeholder="Иван Иванов" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-email" class="form-label">Email</label>
+                            <input type="email" id="client-email" name="email" class="form-control" placeholder="example@mail.ru" required>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="client-subscribe" name="subscribe" value="1" checked>
+                                Согласен получать информацию о скидках и акциях
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-phone" class="form-label">Телефон</label>
+                            <input type="tel" id="client-phone" name="phone" class="form-control" placeholder="+7 (999) 000-00-00" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-address" class="form-label">Адрес доставки</label>
+                            <input type="text" id="client-address" name="delivery_address" class="form-control" placeholder="г. Москва, ул. Большая Семёновская, д. 38" required>
+                        </div>
+
+                        <fieldset class="form-fieldset">
+                            <legend class="form-legend">Время доставки</legend>
+                            <div class="radio-option">
+                                <label class="radio-label">
+                                    <input type="radio" name="delivery_type" value="now" required checked>
+                                    Как можно скорее
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <label class="radio-label">
+                                    <input type="radio" name="delivery_type" value="by_time" required>
+                                    К указанному времени
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                            <label for="delivery-time" class="form-label">Укажите время доставки</label>
+                            <input type="time" id="delivery-time" name="delivery_time" class="form-control" min="07:00" max="23:00" step="300">
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="reset" class="form-btn btn-reset">Сбросить</button>
+                            <button type="submit" class="form-btn btn-submit">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contacts" class="footer">
+        <p class="footer-text">
+            Служба доставки бизнес-ланчей «Московский Ланч».
+            г. Москва, ул. Большая Семёновская, д. 38.
+        </p>
+        <p class="footer-contacts">
+            Телефон:
+            <a href="tel:+74951234567" class="footer-link">+7 (495) 123-45-67</a>
+            | Email:
+            <a href="mailto:order@lunch-moscow.ru" class="footer-link">order@lunch-moscow.ru</a>
+        </p>
+    </footer>
+</body>
+</html>
