@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+.portal-header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    padding: 50px 20px 40px;
+    text-align: center;
+    border-bottom: 4px solid tomato;
+}
+
+.header-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.portal-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.portal-subtitle {
+    font-size: 18px;
+    color: #94a3b8;
+    margin-bottom: 24px;
+}
+
+.student-card {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 16px 28px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.student-card p {
+    font-size: 14px;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+}
+
+.student-card p:last-child {
+    margin-bottom: 0;
+}
+
+.student-card strong {
+    color: #ffffff;
+}
+
+.portal-main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.labs-intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.labs-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.labs-desc {
+    color: #64748b;
+    font-size: 16px;
+}
+
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 25px;
+}
+
+.lab-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.lab-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.lab-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background-color: #fee2e2;
+    color: #ef4444;
+    margin-bottom: 14px;
+    align-self: flex-start;
+}
+
+.lab-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.lab-description {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.lab-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.lab-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.lab-link-primary {
+    background-color: tomato;
+    color: #ffffff;
+}
+
+.lab-link-primary:hover {
+    background-color: #dc3e25;
+}
+
+.lab-link-secondary {
+    background-color: #f1f5f9;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+}
+
+.lab-link-secondary:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+}
+
+.portal-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid #e2e8f0;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .portal-title {
+        font-size: 26px;
+    }
+
+    .labs-grid {
+        grid-template-columns: 1fr;
+    }
+}

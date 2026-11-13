@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторные работы по веб-технологиям — Елейви Мухаммад Иядович</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="portal-header">
+        <div class="header-container">
+            <h1 class="portal-title">Курс «Веб-технологии»</h1>
+            <p class="portal-subtitle">Портал лабораторных работ Московского Политеха</p>
+            <div class="student-card">
+                <p><strong>Студент:</strong> Елейви Мухаммад Иядович</p>
+                <p><strong>Университет:</strong> Московский Политехнический Университет (2026)</p>
+                <p><strong>Репозиторий:</strong> godgg582-ai / eleivi-web-dev-2026-1</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="portal-main">
+        <div class="labs-intro">
+            <h2 class="labs-title">Каталог выполненных работ (1–10)</h2>
+            <p class="labs-desc">Выберите интересующую лабораторную работу для перехода к просмотру проекта</p>
+        </div>
+
+        <div class="labs-grid">
+            <div class="lab-card">
+                <span class="lab-badge">Лабораторная 1</span>
+                <h3 class="lab-name">Главная страница сервиса доставки ланчей</h3>
+                <p class="lab-description">
+                    Семантическая верстка страницы доставки бизнес-ланчей на HTML5
+                    с базовой стилизацией CSS, таблицей популярных блюд и якорной навигацией.
+                </p>
+                <div class="lab-links">
+                    <a href="lab1/index.html" class="lab-link lab-link-primary">Открыть работу</a>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <span class="lab-badge">Лабораторная 2</span>
+                <h3 class="lab-name">Страница меню и адаптивный дизайн</h3>
+                <p class="lab-description">
+                    Вёрстка раздела «Собрать ланч» на CSS Grid и Flexbox.
+                    Адаптивность для экранов ≤800px, ≤600px и ≤400px, «липкий» футер.
+                </p>
+                <div class="lab-links">
+                    <a href="lab2/lunch.html" class="lab-link lab-link-primary">Меню (lunch.html)</a>
+                    <a href="lab2/index.html" class="lab-link lab-link-secondary">Главная</a>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <span class="lab-badge">Лабораторная 3</span>
+                <h3 class="lab-name">Форма оформления заказа</h3>
+                <p class="lab-description">
+                    Форма с выбором категорий блюд, клиентскими данными,
+                    радиокнопками времени доставки и отправкой POST-запроса на httpbin.org.
+                </p>
+                <div class="lab-links">
+                    <a href="lab3/lunch.html" class="lab-link lab-link-primary">Форма заказа</a>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <span class="lab-badge">Лабораторная 4</span>
+                <h3 class="lab-name">Динамический вывод и выбор блюд</h3>
+                <p class="lab-description">
+                    Отрисовка карточек блюд из JavaScript-массива, алфавитная
+                    сортировка, подсчет итоговой стоимости и обновление раздела «Ваш заказ».
+                </p>
+                <div class="lab-links">
+                    <a href="lab4/lunch.html" class="lab-link lab-link-primary">Открыть работу</a>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <span class="lab-badge">Лабораторная 5</span>
+                <h3 class="lab-name">Расширенное меню и фильтры</h3>
+                <p class="lab-description">
+                    Добавлены категории салатов и десертов (всего 30 блюд).
+                    Интерактивные фильтры по типу блюд (рыбное, мясное, вег, порции).
+                </p>
+                <div class="lab-links">
+                    <a href="lab5/lunch.html" class="lab-link lab-link-primary">Открыть работу</a>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <span class="lab-badge">Лабораторная 6</span>
+                <h3 class="lab-name">Комбо-ланчи и валидация заказа</h3>
+                <p class="lab-description">
+                    Блок доступных комбо-наборов с CSS-трансформацией иконок.
+                    Проверка состава ланча при отправке и кастомное модальное уведомление.
+                </p>
+                <div class="lab-links">
+                    <a href="lab6/lunch.html" class="lab-link lab-link-primary">Открыть работу</a>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <span class="lab-badge">Лабораторная 7</span>
+                <h3 class="lab-name">Загрузка данных блюд через API</h3>
+                <p class="lab-description">
+                    Асинхронная загрузка списка блюд через fetch() с внешнего REST API
+                    Московского Политеха с надежным локальным fallback-механизмом.
+                </p>
+                <div class="lab-links">
+                    <a href="lab7/lunch.html" class="lab-link lab-link-primary">Открыть работу</a>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <span class="lab-badge">Лабораторная 8</span>
+                <h3 class="lab-name">Хранение в localStorage и оформление</h3>
+                <p class="lab-description">
+                    Сохранение выбранных блюд между страницами, плавающая панель
+                    перехода, отдельная страница «Оформить заказ» и отправка POST API.
+                </p>
+                <div class="lab-links">
+                    <a href="lab8/lunch.html" class="lab-link lab-link-primary">Собрать ланч</a>
+                    <a href="lab8/order.html" class="lab-link lab-link-secondary">Оформить заказ</a>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <span class="lab-badge">Лабораторная 9</span>
+                <h3 class="lab-name">История заказов (CRUD)</h3>
+                <p class="lab-description">
+                    Страница просмотра истории заказов с таблицей, модальными окнами
+                    подробного просмотра, редактирования данных (PUT) и удаления (DELETE).
+                </p>
+                <div class="lab-links">
+                    <a href="lab9/orders.html" class="lab-link lab-link-primary">История заказов</a>
+                    <a href="lab9/lunch.html" class="lab-link lab-link-secondary">Собрать ланч</a>
+                </div>
+            </div>
+
+            <div class="lab-card">
+                <span class="lab-badge">Лабораторная 10</span>
+                <h3 class="lab-name">Адаптивный лендинг на Bootstrap 5</h3>
+                <p class="lab-description">
+                    Полноценный лендинг компании с Hero-секцией, сеткой преимуществ,
+                    призывом к действию и формой обратной связи на Bootstrap 5.
+                </p>
+                <div class="lab-links">
+                    <a href="lab10/index.html" class="lab-link lab-link-primary">Открыть лендинг</a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="portal-footer">
+            <p>© 2026 Елейви Мухаммад Иядович. Лабораторные работы по дисциплине «Веб-технологии».</p>
+        </footer>
+    </main>
+</body>
+</html>
