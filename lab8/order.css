@@ -1,0 +1,91 @@
+.empty-composition-msg {
+    font-size: 16px;
+    color: #666666;
+    padding: 30px;
+    text-align: center;
+    background-color: #fbf9f6;
+    border-radius: 12px;
+    border: 1px dashed #dddddd;
+    margin: 15px 0;
+}
+
+.inline-link {
+    color: tomato;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.inline-link:hover {
+    text-decoration: underline;
+}
+
+.dish-btn-delete {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.dish-btn-delete:hover {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+.sticky-order-panel {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-top: 2px solid #eaeaea;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.08);
+    padding: 16px 30px;
+    z-index: 500;
+}
+
+.sticky-panel-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sticky-panel-info {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.sticky-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.sticky-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: tomato;
+}
+
+.sticky-checkout-btn {
+    background-color: tomato;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    display: inline-block;
+}
+
+.sticky-checkout-btn:hover {
+    background-color: #e04328;
+}
+
+.sticky-checkout-btn.disabled {
+    background-color: #cccccc;
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+}

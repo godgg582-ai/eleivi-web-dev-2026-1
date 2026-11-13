@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Московский Ланч</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lunch.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-title">Московский Ланч</h1>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="lunch.html" class="nav-link active">Собрать ланч</a>
+            <a href="order.html" class="nav-link">Оформить заказ</a>
+            <a href="#combos" class="nav-link">Варианты ланча</a>
+            <a href="#soups" class="nav-link">Супы</a>
+            <a href="#main-dishes" class="nav-link">Главные блюда</a>
+            <a href="#salads" class="nav-link">Салаты</a>
+            <a href="#drinks" class="nav-link">Напитки</a>
+            <a href="#desserts" class="nav-link">Десерты</a>
+            <a href="#contacts" class="nav-link">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="combos" class="section combos-section">
+            <h2 class="section-title">Доступные варианты ланча</h2>
+            <div class="combos-grid">
+                <div class="combo-card">
+                    <h3 class="combo-num">Вариант 1</h3>
+                    <div class="combo-items">
+                        <div class="combo-item">
+                            <img src="icons/soup.png" alt="Суп" class="combo-icon">
+                            <span class="combo-label">Суп</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="icons/main.png" alt="Главное блюдо" class="combo-icon">
+                            <span class="combo-label">Главное блюдо</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="icons/salad.png" alt="Салат" class="combo-icon">
+                            <span class="combo-label">Салат</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="icons/drink.png" alt="Напиток" class="combo-icon">
+                            <span class="combo-label">Напиток</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="combo-card">
+                    <h3 class="combo-num">Вариант 2</h3>
+                    <div class="combo-items">
+                        <div class="combo-item">
+                            <img src="icons/soup.png" alt="Суп" class="combo-icon">
+                            <span class="combo-label">Суп</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="icons/main.png" alt="Главное блюдо" class="combo-icon">
+                            <span class="combo-label">Главное блюдо</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="icons/drink.png" alt="Напиток" class="combo-icon">
+                            <span class="combo-label">Напиток</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="combo-card">
+                    <h3 class="combo-num">Вариант 3</h3>
+                    <div class="combo-items">
+                        <div class="combo-item">
+                            <img src="icons/soup.png" alt="Суп" class="combo-icon">
+                            <span class="combo-label">Суп</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="icons/salad.png" alt="Салат" class="combo-icon">
+                            <span class="combo-label">Салат</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="icons/drink.png" alt="Напиток" class="combo-icon">
+                            <span class="combo-label">Напиток</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="combo-card">
+                    <h3 class="combo-num">Вариант 4</h3>
+                    <div class="combo-items">
+                        <div class="combo-item">
+                            <img src="icons/main.png" alt="Главное блюдо" class="combo-icon">
+                            <span class="combo-label">Главное блюдо</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="icons/salad.png" alt="Салат" class="combo-icon">
+                            <span class="combo-label">Салат</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="icons/drink.png" alt="Напиток" class="combo-icon">
+                            <span class="combo-label">Напиток</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="combo-card">
+                    <h3 class="combo-num">Вариант 5</h3>
+                    <div class="combo-items">
+                        <div class="combo-item">
+                            <img src="icons/main.png" alt="Главное блюдо" class="combo-icon">
+                            <span class="combo-label">Главное блюдо</span>
+                        </div>
+                        <div class="combo-item">
+                            <img src="icons/drink.png" alt="Напиток" class="combo-icon">
+                            <span class="combo-label">Напиток</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dessert-note">
+                <img src="icons/desert.png" alt="Десерт" class="dessert-note-icon">
+                <p class="dessert-note-text">
+                    Десерты можно добавить к любому варианту ланча
+                </p>
+            </div>
+        </section>
+
+        <section id="soups" class="section">
+            <h2 class="section-title">Выберите суп</h2>
+            <div id="soup-filters" class="filters-container">
+                <button type="button" class="filter-btn" data-kind="fish">рыбный</button>
+                <button type="button" class="filter-btn" data-kind="meat">мясной</button>
+                <button type="button" class="filter-btn" data-kind="veg">вегетарианский</button>
+            </div>
+            <div id="soup-dishes-grid" class="dishes-grid"></div>
+        </section>
+
+        <section id="main-dishes" class="section">
+            <h2 class="section-title">Выберите главное блюдо</h2>
+            <div id="main-filters" class="filters-container">
+                <button type="button" class="filter-btn" data-kind="fish">рыбное</button>
+                <button type="button" class="filter-btn" data-kind="meat">мясное</button>
+                <button type="button" class="filter-btn" data-kind="veg">вегетарианское</button>
+            </div>
+            <div id="main-dishes-grid" class="dishes-grid"></div>
+        </section>
+
+        <section id="salads" class="section">
+            <h2 class="section-title">Выберите салат или стартер</h2>
+            <div id="salad-filters" class="filters-container">
+                <button type="button" class="filter-btn" data-kind="fish">рыбный</button>
+                <button type="button" class="filter-btn" data-kind="meat">мясной</button>
+                <button type="button" class="filter-btn" data-kind="veg">вегетарианский</button>
+            </div>
+            <div id="salad-dishes-grid" class="dishes-grid"></div>
+        </section>
+
+        <section id="drinks" class="section">
+            <h2 class="section-title">Выберите напиток</h2>
+            <div id="drink-filters" class="filters-container">
+                <button type="button" class="filter-btn" data-kind="cold">холодный</button>
+                <button type="button" class="filter-btn" data-kind="hot">горячий</button>
+            </div>
+            <div id="drink-dishes-grid" class="dishes-grid"></div>
+        </section>
+
+        <section id="desserts" class="section">
+            <h2 class="section-title">Выберите десерт</h2>
+            <div id="dessert-filters" class="filters-container">
+                <button type="button" class="filter-btn" data-kind="small">маленькая порция</button>
+                <button type="button" class="filter-btn" data-kind="medium">средняя порция</button>
+                <button type="button" class="filter-btn" data-kind="large">большая порция</button>
+            </div>
+            <div id="dessert-dishes-grid" class="dishes-grid"></div>
+        </section>
+    </main>
+
+    <div id="sticky-panel" class="sticky-order-panel hidden">
+        <div class="sticky-panel-content">
+            <div class="sticky-panel-info">
+                <span class="sticky-label">Итоговая стоимость:</span>
+                <span id="sticky-price-value" class="sticky-price">0 ₽</span>
+            </div>
+            <a id="sticky-checkout-btn" href="order.html" class="sticky-checkout-btn disabled">Перейти к оформлению</a>
+        </div>
+    </div>
+
+    <footer id="contacts" class="footer">
+        <p class="footer-text">
+            Служба доставки бизнес-ланчей «Московский Ланч».
+            г. Москва, ул. Большая Семёновская, д. 38.
+        </p>
+        <p class="footer-contacts">
+            Телефон:
+            <a href="tel:+74951234567" class="footer-link">+7 (495) 123-45-67</a>
+            | Email:
+            <a href="mailto:order@lunch-moscow.ru" class="footer-link">order@lunch-moscow.ru</a>
+        </p>
+    </footer>
+
+    <script src="dishes.js"></script>
+    <script src="render.js"></script>
+</body>
+</html>
