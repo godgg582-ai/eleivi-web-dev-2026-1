@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Московский Ланч</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lunch.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-title">Московский Ланч</h1>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="lunch.html" class="nav-link active">Собрать ланч</a>
+            <a href="#soups" class="nav-link">Супы</a>
+            <a href="#main-dishes" class="nav-link">Главные блюда</a>
+            <a href="#drinks" class="nav-link">Напитки</a>
+            <a href="#order" class="nav-link">Заказ</a>
+            <a href="#contacts" class="nav-link">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="soups" class="section">
+            <h2 class="section-title">Выберите суп</h2>
+            <div id="soup-dishes-grid" class="dishes-grid"></div>
+        </section>
+
+        <section id="main-dishes" class="section">
+            <h2 class="section-title">Выберите главное блюдо</h2>
+            <div id="main-dishes-grid" class="dishes-grid"></div>
+        </section>
+
+        <section id="drinks" class="section">
+            <h2 class="section-title">Выберите напиток</h2>
+            <div id="drink-dishes-grid" class="dishes-grid"></div>
+        </section>
+
+        <section id="order" class="section order-section">
+            <h2 class="section-title">Сделать заказ</h2>
+            <form action="https://httpbin.org/post" method="POST" class="order-form">
+                <input type="hidden" id="hidden-soup" name="soup" value="">
+                <input type="hidden" id="hidden-main" name="main_dish" value="">
+                <input type="hidden" id="hidden-drink" name="drink" value="">
+
+                <div class="form-columns">
+                    <div class="form-column">
+                        <h3 class="form-subtitle">Ваш заказ</h3>
+
+                        <div id="empty-order-msg" class="empty-order-msg">
+                            Ничего не выбрано
+                        </div>
+
+                        <div id="order-details" class="order-details hidden">
+                            <div class="order-summary-item">
+                                <span class="order-item-title">Суп</span>
+                                <span id="order-soup-value" class="order-item-value">Блюдо не выбрано</span>
+                            </div>
+
+                            <div class="order-summary-item">
+                                <span class="order-item-title">Главное блюдо</span>
+                                <span id="order-main-value" class="order-item-value">Блюдо не выбрано</span>
+                            </div>
+
+                            <div class="order-summary-item">
+                                <span class="order-item-title">Напиток</span>
+                                <span id="order-drink-value" class="order-item-value">Напиток не выбран</span>
+                            </div>
+                        </div>
+
+                        <div id="total-price-block" class="total-price-block hidden">
+                            <span class="total-label">Стоимость заказа:</span>
+                            <span id="total-price-value" class="total-value">0 ₽</span>
+                        </div>
+
+                        <div class="form-group comment-group">
+                            <label for="order-comment" class="form-label">Комментарий к заказу</label>
+                            <textarea id="order-comment" name="comment" class="form-control form-textarea" rows="4" placeholder="Пожелания по приготовлению или доставке"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-column">
+                        <h3 class="form-subtitle">Данные клиента</h3>
+
+                        <div class="form-group">
+                            <label for="client-name" class="form-label">Имя</label>
+                            <input type="text" id="client-name" name="full_name" class="form-control" placeholder="Иван Иванов" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-email" class="form-label">Email</label>
+                            <input type="email" id="client-email" name="email" class="form-control" placeholder="example@mail.ru" required>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="client-subscribe" name="subscribe" value="1" checked>
+                                Согласен получать информацию о скидках и акциях
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-phone" class="form-label">Телефон</label>
+                            <input type="tel" id="client-phone" name="phone" class="form-control" placeholder="+7 (999) 000-00-00" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client-address" class="form-label">Адрес доставки</label>
+                            <input type="text" id="client-address" name="delivery_address" class="form-control" placeholder="г. Москва, ул. Большая Семёновская, д. 38" required>
+                        </div>
+
+                        <fieldset class="form-fieldset">
+                            <legend class="form-legend">Время доставки</legend>
+                            <div class="radio-option">
+                                <label class="radio-label">
+                                    <input type="radio" name="delivery_type" value="now" required checked>
+                                    Как можно скорее
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <label class="radio-label">
+                                    <input type="radio" name="delivery_type" value="by_time" required>
+                                    К указанному времени
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                            <label for="delivery-time" class="form-label">Укажите время доставки</label>
+                            <input type="time" id="delivery-time" name="delivery_time" class="form-control" min="07:00" max="23:00" step="300">
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="reset" class="form-btn btn-reset">Сбросить</button>
+                            <button type="submit" class="form-btn btn-submit">Отправить</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contacts" class="footer">
+        <p class="footer-text">
+            Служба доставки бизнес-ланчей «Московский Ланч».
+            г. Москва, ул. Большая Семёновская, д. 38.
+        </p>
+        <p class="footer-contacts">
+            Телефон:
+            <a href="tel:+74951234567" class="footer-link">+7 (495) 123-45-67</a>
+            | Email:
+            <a href="mailto:order@lunch-moscow.ru" class="footer-link">order@lunch-moscow.ru</a>
+        </p>
+    </footer>
+
+    <script src="dishes.js"></script>
+    <script src="render.js"></script>
+</body>
+</html>
