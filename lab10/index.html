@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Московский Ланч - Сервис доставки бизнес-ланчей</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#hero">Московский Ланч</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Навигация">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">Преимущества</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cta">Заказать</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacts">Контакты</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="btn btn-primary btn-sm px-3" href="../lab9/lunch.html">Собрать ланч</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <h1 class="hero-title mb-4">
+                            Вкусные и горячие бизнес-ланчи с доставкой по Москве
+                        </h1>
+                        <p class="hero-text mb-4">
+                            Сбалансированное ресторанное питание каждый день.
+                            Готовим только из свежих фермерских продуктов и
+                            доставляем пунктуально к вашему обеденному перерыву.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="../lab9/lunch.html" class="btn btn-primary">Собрать свой ланч</a>
+                            <a href="#features" class="btn btn-outline-primary">Узнать подробнее</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="images/lunch.jpg" alt="Бизнес-ланчи Московский Ланч" class="hero-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-5">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-3">Почему выбирают нас</h2>
+                    <p class="text-muted col-lg-6 mx-auto">
+                        Мы берем на себя заботу о вашем обеде, экономя ваше
+                        время и гарантируя высокое качество каждого блюда.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon-wrapper mx-auto">🥗</div>
+                            <h3 class="h5 fw-bold mb-3">Свежие продукты</h3>
+                            <p class="text-muted mb-0">
+                                Никаких полуфабрикатов и заморозки. Все блюда
+                                готовятся утром в день доставки.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon-wrapper mx-auto">⏱️</div>
+                            <h3 class="h5 fw-bold mb-3">Точно ко времени</h3>
+                            <p class="text-muted mb-0">
+                                Курьеры доставляют заказ в назначенный интервал
+                                без задержек и опозданий к обеду.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon-wrapper mx-auto">🍱</div>
+                            <h3 class="h5 fw-bold mb-3">Гибкий конструктор</h3>
+                            <p class="text-muted mb-0">
+                                Собирайте свой идеальный набор: супы, горячее,
+                                салаты, напитки и десерты на выбор.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon-wrapper mx-auto">💼</div>
+                            <h3 class="h5 fw-bold mb-3">Для офисов и команд</h3>
+                            <p class="text-muted mb-0">
+                                Специальные условия и скидки при регулярном
+                                корпоративном обслуживании компаний.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="container">
+            <div class="cta-section text-center p-5">
+                <h2 class="display-6 fw-bold mb-3">Готовы вкусно пообедать?</h2>
+                <p class="lead text-light opacity-75 col-lg-8 mx-auto mb-4">
+                    Перейдите в наш интерактивный конфигуратор меню, подберите
+                    любимые блюда и оформите заказ за 2 минуты!
+                </p>
+                <a href="../lab9/lunch.html" class="btn btn-primary btn-lg px-5">Перейти к заказу</a>
+            </div>
+        </section>
+
+        <section id="contacts" class="py-5 bg-light">
+            <div class="container py-4">
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold mb-4">Форма обратной связи</h2>
+                        <p class="text-muted mb-4">
+                            Есть вопросы или предложения по сотрудничеству?
+                            Напишите нам, и наш менеджер свяжется с вами в
+                            течение 15 минут.
+                        </p>
+
+                        <div id="feedback-status" class="alert alert-success d-none" role="alert">
+                            Спасибо! Ваше сообщение успешно отправлено.
+                        </div>
+
+                        <form id="feedback-form" novalidate>
+                            <div class="mb-3">
+                                <label for="contact-name" class="form-label fw-semibold">Ваше имя</label>
+                                <input type="text" class="form-control" id="contact-name" required>
+                                <div class="invalid-feedback">Пожалуйста, укажите ваше имя.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-email" class="form-label fw-semibold">Электронная почта</label>
+                                <input type="email" class="form-control" id="contact-email" required>
+                                <div class="invalid-feedback">Укажите корректный email.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-msg" class="form-label fw-semibold">Сообщение</label>
+                                <textarea class="form-control" id="contact-msg" rows="4" required></textarea>
+                                <div class="invalid-feedback">Пожалуйста, введите текст сообщения.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold mb-4">Контакты</h2>
+                        <p class="text-muted mb-4">
+                            Наш офис и распределительный кулинарный центр открыты
+                            каждый день с 7:00 до 23:00.
+                        </p>
+                        <div class="d-flex flex-column gap-3 mb-4">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">📍</span>
+                                <div>
+                                    <strong>Адрес:</strong><br>
+                                    г. Москва, ул. Большая Семёновская, д. 38
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">📞</span>
+                                <div>
+                                    <strong>Телефон:</strong><br>
+                                    <a href="tel:+74951234567" class="text-decoration-none text-dark">+7 (495) 123-45-67</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="fs-4">✉️</span>
+                                <div>
+                                    <strong>Email:</strong><br>
+                                    <a href="mailto:info@lunch-moscow.ru" class="text-decoration-none text-dark">info@lunch-moscow.ru</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-white rounded-3 border">
+                            <h3 class="h6 fw-bold mb-2">Зона доставки:</h3>
+                            <p class="text-muted small mb-0">
+                                Бесплатная доставка в пределах МКАД при заказе
+                                от 600 ₽. Время доставки от 30 до 45 минут.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-2">© 2026 Служба доставки бизнес-ланчей «Московский Ланч».</p>
+            <p class="mb-0 text-muted small">
+                Разработано студентом Московского Политеха: Елейви Мухаммад Иядович
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
